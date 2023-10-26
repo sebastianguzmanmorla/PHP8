@@ -30,12 +30,12 @@ services:
         container_name: ${COMPOSE_PROJECT_NAME}-database
         image: mysql:latest
         ports:
-            - 3306:3306
+            - ${DATABASE_PORT}:3306
         environment:
-            MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
-            MYSQL_USER: $MYSQL_USER
-            MYSQL_PASSWORD: $MYSQL_PASSWORD
-            MYSQL_DATABASE: $MYSQL_DATABASE
+            MYSQL_ROOT_PASSWORD: $DATABASE_ROOT_PASSWORD
+            MYSQL_DATABASE: $DATABASE_DATABASE
+            MYSQL_USER: $DATABASE_USER
+            MYSQL_PASSWORD: $DATABASE_PASSWORD
         volumes:
             - database:/var/lib/mysql
         env_file: ./../.env
