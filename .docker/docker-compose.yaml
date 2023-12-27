@@ -1,5 +1,5 @@
 version: '3.7'
-name: $COMPOSE_PROJECT_NAME
+name: ${COMPOSE_PROJECT_NAME}
 services:
     webserver:
         container_name: ${COMPOSE_PROJECT_NAME}-webserver
@@ -32,10 +32,10 @@ services:
         ports:
             - ${DATABASE_PORT}:3306
         environment:
-            MYSQL_ROOT_PASSWORD: $DATABASE_ROOT_PASSWORD
-            MYSQL_DATABASE: $DATABASE_DATABASE
-            MYSQL_USER: $DATABASE_USER
-            MYSQL_PASSWORD: $DATABASE_PASSWORD
+            MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${DATABASE_DATABASE}
+            MYSQL_USER: ${DATABASE_USER}
+            MYSQL_PASSWORD: ${DATABASE_PASSWORD}
         volumes:
             - database:/var/lib/mysql
         env_file: ./../.env

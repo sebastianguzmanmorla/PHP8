@@ -17,7 +17,7 @@
 3. Copia el archivo `.env.example` a `.env` y personaliza las variables de entorno según tus necesidades:
 
    ```bash
-   cp .env.example .env
+   cp ./.env.example ./.env
    ```
 
    Abre el archivo `.env` en un editor de texto y configura las variables como el nombre de la base de datos, la contraseña, etc.
@@ -25,7 +25,7 @@
 4. Ejecuta el archivo Docker Compose para crear y ejecutar los contenedores:
 
    ```bash
-   docker-compose --env-file ./.env -f ./.docker/docker-compose.yaml up
+   docker-compose --env-file ./.env -f ./.docker/docker-compose.yaml up -d
    ```
 
 5. Accede a tu aplicación web en tu navegador a través de `http://localhost`. Puedes colocar tus archivos PHP en el directorio `src/`.
